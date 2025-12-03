@@ -110,7 +110,7 @@ public class DoeJohnRegEx {
 			// TODO: put the regular expression for your local part here
 			String comment = "(\\(\\w*\\))*";
 			String noQuoteReg = comment+"(?!\\.)([\\w!#$%&*+\\-/=?^_`{|}~]|\\.(?!\\.))+(?<!\\.)"+comment;
-			String quotedReg = comment+"\"([\\w!#$%&*+\\-/=?^_`{|}~. )(,:;<\\[\\]>@]|(?<=\\\\)\"|(?=\\\\)\\\\)+\""+comment;
+			String quotedReg = comment+"\"([\\w!#$%&*+\\-/=?^_`{|}~. )(,:;<\\[\\]>@]|(?<=\\\\)\"|\\\\\\\\)+\""+comment;
 			String LOCAL_PART = "(" + noQuoteReg + ")|(" + quotedReg + ")";
 
 			String DOMAIN ="([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,}";
