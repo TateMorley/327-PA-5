@@ -15,7 +15,7 @@ import java.util.Map.Entry;
  * @author Xunhua Wang (wangxx@jmu.edu). All rights reserved.
  * @date 11/24/2019; further revised on 12/01/2019, 12/04/2019, 12/06/2022
  */
-public class DoeJohnRegEx {
+public class SmithdealSamMorleyTateMunawarHasnatHillCipher {
 
         //
         // 1. The local-part of an email address must not exceed 64 characters
@@ -23,8 +23,6 @@ public class DoeJohnRegEx {
         // 3. The total length of an email address must not exceed 254 characters
         //
         public boolean isLengthValid (String inEmailAddress) {
-                boolean result = true;
-
                 int pos = inEmailAddress.indexOf('@');
                 if (pos < 0) return false;
 
@@ -106,7 +104,7 @@ public class DoeJohnRegEx {
 	//
 	public static void main (String args[]) {
 		try {
-			DoeJohnRegEx djre = new DoeJohnRegEx ();
+			SmithdealSamMorleyTateMunawarHasnatHillCipher djre = new SmithdealSamMorleyTateMunawarHasnatHillCipher ();
 			// TODO: put the regular expression for your local part here
 			String comment = "(\\(\\w*\\))*";
 			String noQuoteReg = comment+"(?!\\.)([\\w!#$%&*+\\-/=?^_`{|}~]|\\.(?!\\.))+(?<!\\.)"+comment;
