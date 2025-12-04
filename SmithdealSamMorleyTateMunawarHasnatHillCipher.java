@@ -55,8 +55,8 @@ public class SmithdealSamMorleyTateMunawarHasnatHillCipher {
 
 	/**
 	 * Search for email addresses in the input text using the given pattern
-	 * @param inPatternString
-	 * @param inText
+	 * @param inPatternString the created pattern to be used with the matcher
+	 * @param inText The text to find emails in
 	 * @return
 	 */
 	public HashMap<String, Integer> search(String inPatternString, String inText) {
@@ -78,7 +78,7 @@ public class SmithdealSamMorleyTateMunawarHasnatHillCipher {
 
 	/**
 	 * Sort the email map by frequency and print the top 10 email addresses
-	 * @param emailMap
+	 * @param emailMap The hashmap of emails to be sorted
 	 * @return the sorted list of email entries
 	 */
 	public List<Entry<String, Integer>> sortAndPrint(HashMap<String, Integer> emailMap) {
@@ -113,8 +113,8 @@ public class SmithdealSamMorleyTateMunawarHasnatHillCipher {
 
 	/**
 	 * Write all email addresses to a file
-	 * @param list
-	 * @param outFilename
+	 * @param list The sorted list to be written to the output txt file
+	 * @param outFilename The name of the output txt file
 	 * @throws Exception
 	 */
 	public void writeAllEmailsToFile(List<Entry<String, Integer>> list, String outFilename) throws Exception {
@@ -129,8 +129,8 @@ public class SmithdealSamMorleyTateMunawarHasnatHillCipher {
 
 	/**
 	 * Load a text file and return the content as a string
-	 * @param inFilename
-	 * @return
+	 * @param inFilename The name of the file being loaded
+	 * @return The string representation of the file contents
 	 * @throws Exception
 	 */
 	public String loadFile(String inFilename) throws Exception {
