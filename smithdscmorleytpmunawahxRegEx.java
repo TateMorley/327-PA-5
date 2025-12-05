@@ -18,7 +18,7 @@ import java.util.Map.Entry;
  * @author Hasnat Munawar (munawahx@dukes.jmu.edu)
  * @date 11/24/2019; further revised on 12/01/2019, 12/04/2019, 12/06/2022; completed on 12/08/2025
  */
-public class SmithdealSamMorleyTateMunawarHasnatHillCipher {
+public class smithdscmorleytpmunawahxRegEx {
 
 	//
 	// 1. The local-part of an email address must not exceed 64 characters
@@ -124,7 +124,23 @@ public class SmithdealSamMorleyTateMunawarHasnatHillCipher {
 			writer.write(entry + System.lineSeparator());
 		}
 		writer.close();
-		System.out.println("Task 4b: All sorted email addresses are written to file " + outFilename + "(all team members eIDs)");
+		System.out.println("Task 4b: All sorted email addresses are written to file " + outFilename);
+	}
+
+	/**
+	 * Write only unique email addresses to a file (no frequencies)
+	 * This is for Task 3 submission requirement
+	 * @param list The sorted list of email entries
+	 * @param outFilename The name of the output txt file
+	 * @throws Exception
+	 */
+	public void writeUniqueEmailsToFile(List<Entry<String, Integer>> list, String outFilename) throws Exception {
+		FileWriter writer = new FileWriter(outFilename);
+		for (Map.Entry<String, Integer> entry : list) {
+			writer.write(entry.getKey() + System.lineSeparator());  // Only email, no frequency
+		}
+		writer.close();
+		System.out.println("Task 3b: All unique email addresses are written to file " + outFilename);
 	}
 
 	/**
@@ -153,7 +169,7 @@ public class SmithdealSamMorleyTateMunawarHasnatHillCipher {
 
 	public static void main(String args[]) {
 		try {
-			SmithdealSamMorleyTateMunawarHasnatHillCipher djre = new SmithdealSamMorleyTateMunawarHasnatHillCipher();
+			smithdscmorleytpmunawahxRegEx djre = new smithdscmorleytpmunawahxRegEx();
 			// put the regular expression for your local part here
 			String comment = "(\\(\\w*\\))*";
 			String noQuoteReg = comment + "(?!\\.)([\\w!#$%&*+\\-/=?^_`{|}~]|\\.(?!\\.))+(?<!\\.)" + comment;
@@ -184,7 +200,12 @@ public class SmithdealSamMorleyTateMunawarHasnatHillCipher {
 
 			HashMap<String,Integer> emailMap = djre.search(pattern5, text2); // pattern5
 			List<Entry<String, Integer>> emailList = djre.sortAndPrint(emailMap);
-			djre.writeAllEmailsToFile(emailList, "SmithdealSamMorleyTateMunawarHasnat_all_email_addresses.txt");
+
+			// Task 4: Write sorted emails WITH frequencies
+			djre.writeAllEmailsToFile(emailList, "smithdscmorleytpmunawahx_sorted_emailaddresses.txt");
+
+			// Task 3: Write unique emails WITHOUT frequencies
+			djre.writeUniqueEmailsToFile(emailList, "smithdscmorleytpmunawahx_all_emailaddresses.txt");
 
 		} catch (Exception ex) {
 			ex.printStackTrace();
