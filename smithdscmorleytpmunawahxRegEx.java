@@ -193,9 +193,9 @@ public class smithdscmorleytpmunawahxRegEx {
 			}
 
 			String text2 = djre.loadFile(args[0]);
-
+						System.out.println("\nOur regular expression: " + pattern5 +"\n");
 			System.out.println("Task 1: Our regular expression works as follows:");
-			System.out.println("\tLOCAL_PART: Either unquoted (comments allowed, special chars allowed, dots can't be consecutive) OR quoted strings");
+			System.out.println("\tLOCAL_PART: The local part of the expression is basically split into two sections, or one 'OR statement' it can be a quoted email OR \n\tan unquoted email. This first part (\\(\\w*\\))* is used to allow for comments at the start of either type of email. In the quoted \n\temail the \" ensures that the first char after the comment is a double quote and again for the last char. Both quoted and unquoted \n\texpressions contain similar bodies (e.g. the characters allowed in the local section) The exception to this is in the unquoted \n\texpression. It uses \\.(?!\\.) to ensure that two periods cannot be used consecutively. \n\tIt also ends and begins with verification that the char is not a period...\n\tthe local part implements all requested tasks including the bonus stuff.");
 			System.out.println("\tDOMAIN: Either standard domain (labels with alphanumerics/hyphens, no leading/trailing hyphens) OR IP in brackets");
 
 			HashMap<String,Integer> emailMap = djre.search(pattern5, text2); // pattern5
